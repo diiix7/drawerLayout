@@ -5,18 +5,14 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import {heightPercentageToDP as hp,
     widthPercentageToDP as wp
 } from "react-native-responsive-screen";
+import { useNavigation } from '@react-navigation/native';
+import Header from './Header';
 
 export default function DrawerLayout() {
     const [open, setOpen] = useState(false);
+    const navigation = useNavigation();
     const drawerContent = () =>{
 
-        const handleKiosk = () => {
-
-        }
-
-        const handleSubServices = () => {
-
-        }
         return (
         <>
             <View style={styles.drawerHead}>
@@ -25,6 +21,7 @@ export default function DrawerLayout() {
                 <View style={styles.line}></View>
             <View style={styles.drawerItems}>
                 <Pressable
+                    onPress={() => navigation.navigate('Kiosk')}
                     style={({ pressed }) => [
                         styles.drawerItem,
                         {
@@ -35,6 +32,7 @@ export default function DrawerLayout() {
                     <View style={styles.drawerItemLabel}><Text style={styles.label}>Home</Text></View>
                 </Pressable>
                 <Pressable
+                    //onPress={() => navigation.navigate('Services')}
                     style={({ pressed }) => [
                         styles.drawerItem,
                         {
@@ -45,6 +43,7 @@ export default function DrawerLayout() {
                     <View style={styles.drawerItemLabel}><Text style={styles.label}>Services</Text></View>
                 </Pressable>
                 <Pressable
+                    //onPress={() => navigation.navigate('Users')}
                     style={({ pressed }) => [
                         styles.drawerItem,
                         {
@@ -55,6 +54,7 @@ export default function DrawerLayout() {
                     <View style={styles.drawerItemLabel}><Text style={styles.label}>Users</Text></View>
                 </Pressable>
                 <Pressable
+                    // onPress={() => navigation.navigate('Workspace')}
                     style={({ pressed }) => [
                         styles.drawerItem,
                         {
@@ -65,6 +65,7 @@ export default function DrawerLayout() {
                     <View style={styles.drawerItemLabel}><Text style={styles.label}>Workspace</Text></View>
                 </Pressable>
                 <Pressable
+                    // onPress={() => navigation.navigate('About')}
                     style={({ pressed }) => [
                         styles.drawerItem,
                         {
@@ -89,14 +90,15 @@ export default function DrawerLayout() {
                 width: wp("80"),
             }}
         >
-            <View style={styles.container}>
+            {/*<View style={styles.container}>
                 <Pressable onPress={() => setOpen((prevOpen) => !prevOpen)}>
                 <Icon name="notes" size={40} style={styles.icon} />
                 </Pressable>
                 <View style={styles.headTitle}>
                     <Text style={styles.title}>Drawer Layout</Text>
                 </View>
-            </View>
+            </View>*/}
+            <Header title="Drawer Layout Header" />
         </Drawer>
     );
 }
