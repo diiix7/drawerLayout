@@ -1,35 +1,34 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DrawerLayout from './components/DrawerLayout';
-import { routes } from './utils/Routes';
-import Icon from "react-native-vector-icons/MaterialIcons";
-import {widthPercentageToDP as wp} from "react-native-responsive-screen";
+//import { routes } from './utils/Routes';
+import Home from "./screens/Home";
+import About from "./screens/About";
 
 const Stack = createStackNavigator();
 const App = () => {
     const headerOptions = () => {
         return {
-            //title: "PageName",  //already in Stack.Screen=>name
-            headerShown: true,
-            headerBackVisible: true,
-            //headerLeft: <Icon name="notes" size={40} style={{left:wp("5"),}} />,
+            headerShown: false,
         };
     };
 
   return (
       <NavigationContainer>
-          <Stack.Navigator initialRouteName="Kiosk">
+          <Stack.Navigator initialRouteName="DrawerLayout">
               <Stack.Screen name="DrawerLayout" component={DrawerLayout}
                             options={headerOptions}
                   />
-              <Stack.Screen name="Kiosk" component={routes.home.screen}
+              <Stack.Screen name="Home" component={Home}
                             options={headerOptions}
                   />
-              <Stack.Screen name="SubServices" component={routes.profile.screen}
+              <Stack.Screen name="About" component={About}
                             options={headerOptions}
                   />
+              {/*<Stack.Screen name="SubServices" component={routes.profile.screen}
+                            options={headerOptions}
+              />*/}
           </Stack.Navigator>
       </NavigationContainer>
   );

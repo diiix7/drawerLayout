@@ -1,5 +1,5 @@
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-export default function SubServices() {
+export default function Home() {
     return (
         <View style={styles.container}>
             <Text>Ici c'est Home</Text>

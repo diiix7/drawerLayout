@@ -1,12 +1,12 @@
-import Kiosk from "../screens/Kiosk";
-import SubServices from "../screens/SubServices";
+import Kiosk from "../screens/Home";
+import About from "../screens/About";
 export const routes = {
     home: {
         path: '/kiosk/',
         screen: Kiosk,
     },
-    profile: {
-        path: '/subservices',
-        screen: SubServices,
+    about: {
+        path: '/about',
+        screen: About,
     },
 };
