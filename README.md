@@ -1,4 +1,4 @@
-# DRAWER LAYOUT FOR React Native App
+# Drawer Layout For React Native App
 
 A simple drawer using react-native-drawer-layout
 
