@@ -6,7 +6,7 @@ A simple drawer using react-native-drawer-layout
 
 To run this code, you will need the following:
 
-- git clone github.com/geekychris17/drawerLayout
+- git clone github.com/diiix7/drawerLayout
 - cd drawerLayout
 - npm install
 - npm start
